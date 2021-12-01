@@ -23,7 +23,10 @@ export class SidebarService {
       submenu: [
         { titulo: 'usuarios', url: 'usuarios' },
         { titulo: 'categorias', url: 'categorias' },
-        { titulo: 'productos', url: 'categorias' },
+        { titulo: 'producto', url: 'producto' },
+        { titulo: 'resultante', url: 'resultante' },
+        { titulo: 'ListarProducto', url: 'ListarProducto' },
+        { titulo: 'ListarResultante', url: 'ListarResultante' }
       ]
     }
   ]

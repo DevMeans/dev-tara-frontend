@@ -1,0 +1,35 @@
+<button (click)="exportexcel()">Exportar a Excel</button>
+<table class="table" id="excel-table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">turno</th>
+            <th scope="col">fechaRegistro</th>
+            <th scope="col">hora</th>
+            <th scope="col">codigoOperario</th>
+            <th scope="col">nombreOperario</th>
+            <th scope="col">numLoteMP</th>
+            <th scope="col">codigoMaterial</th>
+            <th scope="col">descripcion</th>
+            <th scope="col">unidadMedida</th>
+            <th scope="col">cantidad</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of productos;let i =index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.turno}}</td>
+            <td>{{item.fechaRegistro}}</td>
+            <td>{{item.hora}}</td>
+            <td>{{item.codigoOperario}}</td>
+            <td>{{item.nombreOperario}}</td>
+            <td>{{item.numLoteMP}}</td>
+            <td>{{item.codigoMaterial}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.unidadMedida}}</td>
+            <td>{{item.cantidad}}</td>
+            <td><button class="btn btn-danger" (click)="eliminarCambios(item)" >x</button></td>
+        </tr>
+    </tbody>
+</table>

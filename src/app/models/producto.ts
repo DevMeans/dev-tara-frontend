@@ -1,6 +1,6 @@
 
 
-export class usuario {
+export class producto {
     constructor(
 
        public nombre:string,

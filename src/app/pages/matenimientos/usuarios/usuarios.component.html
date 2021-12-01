@@ -29,34 +29,18 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>img</th>
+
                                 <th>usuarios</th>
-                                <th>correo</th>
-                                <th>role</th>
-                                <th>estado</th>
+                                <th>Codigo</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let user of usuarios">
-                                <td><img [src]="user.imagenUrl" class="img-fluid dimensionimg"></td>
+
                                 <td>
                                     <p>{{user.nombre}}</p>
                                 </td>
-                                <td>{{user.correo}}</td>
-                                <td>
-                                    <select name="" id="" [(ngModel)]="user.rol" (change)="cambiarRoles(user)" class="form-control">
-                                        <option value="ADMIN_ROLE">ADMIN</option>
-                                        <option value="VENTAS_ROLE">VENTAS</option>
-                                        <option value="INVITADO_ROLE">INVITADO</option>
-                                    </select>
-
-                                </td>
-                                <td>
-                                    <select name="" id="" [(ngModel)]="user.estado" (change)="cambiarEstado(user)"  class="form-control">
-                                        <option value="true">activo</option>
-                                        <option value="false">inactivo</option>
-                                    </select>
-                                </td>
+                                <td>{{user.codigo}}</td>
                             </tr>
                         </tbody>
                         <div *ngIf="txtTermino.value.length===0">

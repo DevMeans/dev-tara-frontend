@@ -7,6 +7,8 @@ import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { CargaImagenesService } from './services/carga-imagenes.service';
 import { PipesPipe } from './pipes/pipes.pipe';
+import { ProductosComponent } from './matenimientos/productos/productos.component';
+import { ProductoResultanteComponent } from './matenimientos/producto-resultante/producto-resultante.component';
 
 
 
@@ -15,6 +17,8 @@ import { PipesPipe } from './pipes/pipes.pipe';
     AppComponent,
     NopagefoundComponent,
     PipesPipe,
+    ProductosComponent,
+    ProductoResultanteComponent,
   ],
   imports: [
     

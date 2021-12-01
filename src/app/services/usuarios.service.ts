@@ -42,8 +42,8 @@ export class UsuariosService {
         'x-token': token
       }
     }).pipe(tap((resp: any) => {
-      const { nombre, correo, rol, img, uid } = resp.usuario
-      this.usuario = new usuario(nombre, correo, '', rol, img, uid)
+      const { nombre, codigo, uid } = resp.usuario
+      this.usuario = new usuario(nombre, codigo, '', uid)
       //this.usuario.imprimirUsuario()
       // console.log(resp.usuario)
       //   this.uidUsu=resp.usuario.uid
@@ -86,8 +86,8 @@ export class UsuariosService {
     const url = `${base_url}/usuario?desde=${desde}`
     return this.http.get<cargarUsuarios>(url, this.headers).pipe(
       map(resp => {
-        const usuarios = resp.usuarios.map(user => new usuario(
-          user.nombre, user.correo, '', user.rol, user.img, user.uid, user.estado
+        const usuarios = resp.results.map(user => new usuario(
+          user.nombre, user.codigo, '',  user.uid, user.estado
         ))
         return {
           total: resp.total,
@@ -96,17 +96,7 @@ export class UsuariosService {
       })
     )
   }
-  cambiarEstado(usuario: usuario) {
-    //console.log('eliminando')
-    const url = `${base_url}/usuario/desactivar/${usuario.uid}`
-    return this.http.put(url,{estado:usuario.estado},this.headers)
-  }
-  cambiarRoles(usuario: usuario) {
-    //localhost:4000/api/usuario/roles/6120f0700bf2921ed0290f33
-    const url = `${base_url}/usuario/roles/${usuario.uid}`
-    console.log(usuario.rol)
-    return this.http.put(url, { rol: usuario.rol }, this.headers)
-  }
+
 
 
 

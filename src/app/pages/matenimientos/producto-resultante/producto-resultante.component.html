@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm" (ngSubmit)="crearProductoResultante()">
+    <div class="form-group" forcontrol>
+        <label for="exampleInputEmail1">Numero de orden de fabricacion</label>
+        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Numero de orden de fabricacion" formControlName="NumOrdenFab">
+        <small id="" class="form-text text-danger" *ngIf="campoNoValido('NumOrdenFab')" >We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">N° Lote de PT</label>
+        <input type="text" class="form-control" id="" aria-describedby="" placeholder="N° Lote de MP" formControlName="numLotePT">
+        <small id="" class="form-text text-danger" *ngIf="campoNoValido('numLotePT')" >We'll never share your email with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Código de material</label>
+        <input type="text" class="form-control" id="" aria-describedby="" placeholder=" Código de material" formControlName="codigoMaterial">
+        <small id="" class="form-text text-danger" *ngIf="campoNoValido('codigoMaterial')" >We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Descripcion</label>descripcion
+        <input type="text" class="form-control" id="" aria-describedby="" placeholder=" Código de material" formControlName="descripcion">
+        <small id="" class="form-text text-danger" *ngIf="campoNoValido('descripcion')" >We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Unidad de medida</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="unidadMedida">
+            <option>KILOS</option>
+            <option>LIBRAS</option>
+            <option>GRAMOS</option>
+            <option>TONELADAS</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Cantidad</label>
+        <input type="text" class="form-control" id="" aria-describedby="" placeholder=" Cantidad" formControlName="cantidad">
+        <small id="" class="form-text text-danger" *ngIf=" campoNoValido('cantidad')" >We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

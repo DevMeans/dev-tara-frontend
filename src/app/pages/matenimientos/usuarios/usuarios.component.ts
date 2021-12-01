@@ -26,14 +26,7 @@ export class UsuariosComponent implements OnInit {
 
   }
 
-  cambiarRoles(user: usuario) {
 
-    this.usuariosServices.cambiarRoles(user).subscribe(
-      resp => {
-        console.log(resp)
-      }
-    )
-  }
   cargarusuarios() {
     this.usuariosServices.cargarUsuarios(this.desde).subscribe(({ total, usuarios }) => {
       console.log()
@@ -66,45 +59,10 @@ export class UsuariosComponent implements OnInit {
     return this.busquedaServices.buscar('usuarios', termino).subscribe(
       (resp: any) => {
         const usuarios = resp.results.map((user: any) => new usuario(
-          user.nombre, user.correo, '', user.rol, user.img, user.uid, user.estado
-        ))
+          user.nombre, user.codigo, '', user.uid))
         console.log(resp.results)
         this.usuarios = usuarios
       }
     )
   }
-  cambiarEstado(usuario: usuario) {
-    let mensaje = ""
-    let cabezera = ""
-    let textoBoton = ""
-    if (usuario.estado == "true") {
-      mensaje = `estas seguro de activar el usuario ${usuario.nombre}`
-      cabezera = `Activar Usuario`
-      textoBoton = `Si ,activar`
-      console.log('estas en el true')
-    } else {
-      cabezera = `Desactivar Usuario`
-      mensaje = `estas seguro de activar el usuario ${usuario.nombre}`
-      textoBoton = `Si ,desactivar`
-    }
-    Swal.fire({
-      title: cabezera,
-      text: mensaje,
-      icon: 'info',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: textoBoton
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.usuariosServices.cambiarEstado(usuario).subscribe(resp => {
-          console.log(resp)
-        })
-      } else {
-        this.cargarusuarios()
-      }
-    })
-
-  }
-
 }

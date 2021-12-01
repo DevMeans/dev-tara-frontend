@@ -7,9 +7,12 @@ import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgDropFilesDirective } from '../directives/ng-drop-files.directive';
-import { PerfilComponent } from './perfil/perfil.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuariosComponent } from './matenimientos/usuarios/usuarios.component';
+import { ProductosComponent } from './matenimientos/productos/productos.component';
+import { ProductoResultanteComponent } from './matenimientos/producto-resultante/producto-resultante.component';
+import { ListarProductosComponent } from './matenimientos/listar-productos/listar-productos.component';
+import { ListarResultanteComponent } from './matenimientos/listar-resultante/listar-resultante.component';
 @NgModule({
   declarations: [
     ProgressComponent,
@@ -17,8 +20,11 @@ import { UsuariosComponent } from './matenimientos/usuarios/usuarios.component';
     DashboardComponent,
     PagesComponent,
     NgDropFilesDirective,
-    PerfilComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ProductosComponent,
+    ProductoResultanteComponent,
+    ListarProductosComponent,
+    ListarResultanteComponent
   ],
   imports: [
     RouterModule,

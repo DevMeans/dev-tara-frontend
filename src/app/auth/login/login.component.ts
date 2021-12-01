@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   public formSubmited = false;
   public loginForm: FormGroup = new FormGroup(
     {
-      correo: new FormControl(localStorage.getItem('correo') || '', [Validators.required, Validators.email]),
+      codigo: new FormControl(localStorage.getItem('codigo') || '', [Validators.required]),
       password: new FormControl('', [Validators.required,]),
       remember: new FormControl(false)
     })
@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
       subscribe(resp => {
         console.log(resp)
         if (this.loginForm.get('remember')?.value) {
-          localStorage.setItem('correo', this.loginForm.get('correo')?.value);
+          localStorage.setItem('codigo', this.loginForm.get('codigo')?.value);
         } else {
-          localStorage.removeItem('correo')
+          localStorage.removeItem('codigo')
         }
         this.router.navigateByUrl('/dashboard')
       }, (err) => {

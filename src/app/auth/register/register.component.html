@@ -14,8 +14,8 @@
                 </div>
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Email"
-                            formControlName="correo">
+                        <input class="form-control" type="text" required="" placeholder="Codigo"
+                            formControlName="codigo">
                     </div>
                 </div>
                 <div class="form-group ">
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col text-danger">
                         <p *ngIf=" campoNoValido('nombre')">El nombre es obligatorio</p>
-                        <p *ngIf=" campoNoValido('correo')">El correo es obligatorio</p>
+                        <p *ngIf=" campoNoValido('codigo')">El codigo es obligatorio</p>
                         <p *ngIf="aceptaTerminos()">Debe aceptar los terminos obligatorio</p>
                         <p *ngIf="pwdNovalidas()">las contraseñas no coinciden</p>
                     </div>
