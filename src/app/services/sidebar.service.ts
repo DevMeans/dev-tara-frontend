@@ -22,7 +22,6 @@ export class SidebarService {
       icono: 'mdi mdi-folder-lock-open',
       submenu: [
         { titulo: 'usuarios', url: 'usuarios' },
-        { titulo: 'categorias', url: 'categorias' },
         { titulo: 'producto', url: 'producto' },
         { titulo: 'resultante', url: 'resultante' },
         { titulo: 'ListarProducto', url: 'ListarProducto' },
